@@ -57,3 +57,23 @@
 .create-btn:hover {
   box-shadow: 0px 10px 5px 0px rgba(0, 0, 0, 0.75);
 }
+
+/* LIST CONTAINER */
+
+.list-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.form-list {
+  background-color: aquamarine;
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+  margin-top: 30px;
+  padding: 30px;
+  border-radius: 10px;
+  font-weight: 500;
+}
