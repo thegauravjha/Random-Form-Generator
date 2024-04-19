@@ -39,7 +39,7 @@ const FormList = () => {
                     <div className="form-list" key={index}>
                         <Link
                             to={"/form/" + item.title}
-                            style={{ textDecoration: "none", color: "#fff" }}
+                            style={{ textDecoration: "none", color: "#000" }}
                         >
                             <div className="form-name">{item.title}</div>
                         </Link>

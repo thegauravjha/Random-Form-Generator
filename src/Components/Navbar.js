@@ -1,10 +1,15 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     return (
         <div className='navbar'>
             <h1>
-                Form Craft
+                <Link
+                    to={"/"}
+                    style={{ textDecoration: "none", color: "#000" }}
+                >Form Craft
+                </Link>
             </h1>
             <ul className='menu'>
                 <li className='menu-item'>About Me</li>

@@ -8,18 +8,43 @@ const formSlice = createSlice({
                 title: "Sample Form",
                 fields: [
                     {
-                        lable: 'Name',
+                        label: 'Name',
                         type: 'input',
                         rules: [{
                             required: true,
                         }]
                     },
                     {
-                        lable: 'Gender',
+                        label: 'Gender',
                         type: 'dropdown',
                         options: ["Male", "Female", "Other"],
                         rules: [{
                             required: false,
+                        }]
+                    },
+                    {
+                        label: 'Skills',
+                        type: 'checkbox',
+                        options: ["React.js", "Redux", "Next.js", "AWS"],
+                        rules: [{
+                            required: true,
+                        }]
+                    },
+                    {
+                        label: 'Are You Willing to Relocate',
+                        type: 'radio',
+                        options: ["Yes", "No"],
+                        rules: [{
+                            required: true,
+                        }]
+                    },
+                    {
+                        label: 'Upload Your Resume',
+                        type: 'upload',
+                        rules: [{
+                            required: true,
+                            maxFileSize: "10", //in mb, 10mb,
+                            fileSupport: ["pdf", "jpg", "docs", "png"]
                         }]
                     }
                 ]
@@ -28,7 +53,7 @@ const formSlice = createSlice({
                 title: "FeedBack Form",
                 fields: [
                     {
-                        lable: 'Name',
+                        label: 'Name',
                         type: 'input',
                         rules: [{
                             required: true,
