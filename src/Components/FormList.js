@@ -13,14 +13,6 @@ const FormList = () => {
     const showModal = () => {
         setIsModalOpen(true);
     };
-    const handleOk = () => {
-        const formValues = form.getFieldsValue(); // Get form field values
-        console.log("Form Values:", formValues); // Log form field values
-        setIsModalOpen(false);
-    };
-    const handleCancel = () => {
-        setIsModalOpen(false);
-    };
 
     return (
         <div className='container'>
@@ -29,11 +21,12 @@ const FormList = () => {
                 <Modal
                     title={<><FormOutlined /> New Form</>}
                     open={isModalOpen}
-                    onOk={handleOk}
-                    onCancel={handleCancel}
+                    onCancel={() => setIsModalOpen(false)}
                     width={1000}
+                    destroyOnClose
+                    footer={null}
                 >
-                    <FormBuilder form={form} /> {/* Pass form instance to FormBuilder */}
+                    <FormBuilder form={form} setIsModalOpen={setIsModalOpen} /> {/* Pass form instance to FormBuilder */}
                 </Modal>
             </div>
             <div className="list-container">
