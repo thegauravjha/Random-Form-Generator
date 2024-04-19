@@ -16,7 +16,7 @@ const Form = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log("Form Values:", formValues);
+        console.log("Form Data:", formValues);
     };
 
     const handleChange = (event) => {
@@ -48,6 +48,9 @@ const Form = () => {
                         ))}
                         <div className='submit-btn'>
                             <button type="submit">Submit</button>
+                        </div>
+                        <div style={{ marginTop: '20px', fontSize: '14px' }}>
+                            Note: Open the Network Tab > Console to see the JSON data before click on submit.
                         </div>
                     </form>
                 </>
