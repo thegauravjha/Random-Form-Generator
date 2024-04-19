@@ -1,3 +1,54 @@
+import { Input, Select } from "antd";
+
+export const FIELD_TYPES = [
+    {
+        label: 'input',
+        value: 'input',
+    },
+    {
+        label: 'dropdown',
+        value: 'dropdown',
+    },
+    {
+        label: 'checkbox',
+        value: 'checkbox',
+    },
+    {
+        label: 'radio',
+        value: 'radio',
+    },
+    {
+        label: 'upload',
+        value: 'upload',
+    }
+];
+
+export const FORM_BUILDER_MAPPING = {
+    input: {
+        label: 'Label Name',
+        rules: [{ required: true, message: 'Label name is required' }]
+    },
+    dropdown: {
+        label: 'Label Name',
+        options: 'Options'
+    },
+    checkbox: {
+        label: 'Label Name',
+        options: 'Options'
+    },
+    radio: {
+        label: 'Label Name',
+        options: 'Options'
+    },
+    upload: {
+        label: 'Label Name',
+        rules: [{ required: true, message: 'Label name is required' }],
+        maxFileSize: 'Max File Size (MB)',
+        fileSupport: 'Supported File Types'
+    }
+};
+
+
 export const FIELD_MAPPING = {
     input: ({ label, rules, onChange }) => (
         <input type="text" onChange={onChange} name={label} required={rules.some(rule => rule.required)} />
