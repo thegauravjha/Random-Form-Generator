@@ -77,3 +77,9 @@
   border-radius: 10px;
   font-weight: 500;
 }
+
+/* FORM BUILDER */
+
+.form-builder-container {
+  margin-top: 30px;
+}

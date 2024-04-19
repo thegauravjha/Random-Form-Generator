@@ -3,7 +3,40 @@ import { createSlice } from "@reduxjs/toolkit"
 const formSlice = createSlice({
     name: "cart",
     initialState: {
-        items: 1
+        items: [
+            {
+                title: "Sample Form",
+                fields: [
+                    {
+                        lable: 'Name',
+                        type: 'input',
+                        rules: [{
+                            required: true,
+                        }]
+                    },
+                    {
+                        lable: 'Gender',
+                        type: 'dropdown',
+                        options: ["Male", "Female", "Other"],
+                        rules: [{
+                            required: false,
+                        }]
+                    }
+                ]
+            },
+            {
+                title: "FeedBack Form",
+                fields: [
+                    {
+                        lable: 'Name',
+                        type: 'input',
+                        rules: [{
+                            required: true,
+                        }]
+                    }
+                ]
+            }
+        ]
     },
     reducers: {
         addItem: (state, action) => {

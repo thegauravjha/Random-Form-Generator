@@ -3,6 +3,7 @@ import { Modal } from 'antd';
 import { FormOutlined } from '@ant-design/icons';
 import { useSelector } from 'react-redux';
 import FormBuilder from './FormBuilder'
+import { Link } from 'react-router-dom';
 
 
 const FormList = () => {
@@ -34,14 +35,17 @@ const FormList = () => {
                 </Modal>
             </div>
             <div className="list-container">
-                <div className="form-list">
-                    <div className="form-name">Sample Form {items}</div>
-                    <div className="action">X</div>
-                </div>
-                <div className="form-list">
-                    <div className="form-name">Sample Form</div>
-                    <div className="action">X</div>
-                </div>
+                {items.map((item, index) => (
+                    <div className="form-list" key={index}>
+                        <Link
+                            to={"/form/" + item.title}
+                            style={{ textDecoration: "none", color: "#fff" }}
+                        >
+                            <div className="form-name">{item.title}</div>
+                        </Link>
+                        <div className="action">X</div>
+                    </div>
+                ))}
             </div>
         </div>
     )

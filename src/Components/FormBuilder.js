@@ -1,8 +1,10 @@
-import React from 'react'
+import React from 'react';
 
 const FormBuilder = () => {
     return (
-        <div style={{ marginTop: '30px' }} >FormBuilder</div>
+        <div className='form-builder-container' >
+            FormBuilder
+        </div>
     )
 }
 
