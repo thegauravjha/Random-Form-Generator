@@ -22,10 +22,10 @@ const Navbar = () => {
                     </Link>
                 </li>
                 <li className='menu-item'>
-                    <a href='https://www.linkedin.com/in/gauravjhacode/' target='blank'>LinkedIn</a>
+                    <a href='https://www.linkedin.com/in/gauravjhacode/' target="_blank">LinkedIn</a>
                 </li>
                 <li className='menu-item'>
-                    <a href='https://github.com/thegauravjha/Random-Form-Generator' target='blank'>Github Link</a>
+                    <a href='https://github.com/thegauravjha/Random-Form-Generator' target="_blank">Github Link</a>
                 </li>
             </ul>
         </div>
