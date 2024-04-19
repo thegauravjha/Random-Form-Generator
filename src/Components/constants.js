@@ -50,12 +50,12 @@ export const FORM_BUILDER_MAPPING = {
 
 
 export const FIELD_MAPPING = {
-    input: ({ label, rules, onChange }) => (
+    input: ({ label, rules = [], onChange }) => (
         <input type="text" onChange={onChange} name={label} required={rules.some(rule => rule.required)} />
     ),
     dropdown: ({ label, options, rules, onChange }) => (
         <select name={label} required={rules.some(rule => rule.required)} onChange={onChange}>
-            <option value="">Select {label}</option>
+            <option value="">Select an option</option>
             {options.map(option => (
                 <option key={option} value={option}>
                     {option}
@@ -73,7 +73,7 @@ export const FIELD_MAPPING = {
             ))}
         </div>
     ),
-    radio: ({ label, options, rules, onChange }) => (
+    radio: ({ label, options, rules = [], onChange }) => (
         <div>
             {options.map(option => (
                 <label key={option} className="radio-label">
@@ -83,7 +83,10 @@ export const FIELD_MAPPING = {
             ))}
         </div>
     ),
-    upload: ({ label, rules, onChange }) => (
-        <input type="file" name={label} required={rules.some(rule => rule.required)} onChange={onChange} accept={rules[0].fileSupport.map(type => `.${type}`).join(',')} />
-    )
+    upload: ({ label, rules = [], onChange }) => {
+        const fileSupport = rules?.[0]?.fileSupport || []; // Check if rules exist and if fileSupport is defined
+        return (
+            <input type="file" name={label} required={rules.some(rule => rule.required)} onChange={onChange} accept={fileSupport.map(type => `.${type}`).join(',')} />
+        );
+    }
 };

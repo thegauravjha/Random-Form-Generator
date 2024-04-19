@@ -2,13 +2,18 @@ import React, { useState } from 'react';
 import { CloseOutlined } from '@ant-design/icons';
 import { Select, Button, Card, Form, Input, Space, Switch } from 'antd';
 import { FIELD_TYPES } from "./constants";
+import { useDispatch } from 'react-redux';
+import { updateItems } from '../redux/Slices/formSlice';
 
 const FormBuilder = ({ form, setIsModalOpen }) => {
     const [selectedFields, setSelectedFields] = useState(["input"]);
+    const dispatch = useDispatch()
 
     const onFinish = (values) => {
         console.log("values", values);
+        dispatch(updateItems(values))
         setIsModalOpen(false);
+        form.resetFields();
     };
 
     return (

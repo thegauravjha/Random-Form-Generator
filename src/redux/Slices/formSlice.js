@@ -64,17 +64,24 @@ const formSlice = createSlice({
         ]
     },
     reducers: {
-        addItem: (state, action) => {
-            state.items.push(action.payload);
+        updateItems: (state, action) => {
+            const { formName, items } = action.payload;
+            state.items.push({
+                title: formName,
+                fields: items.map(item => ({
+                    label: item.label_name,
+                    type: item.fieldType,
+                    options: item.options ? item.options.map(option => option.option) : [],
+                    rules: item.required ? [{ required: true }] : []
+                }))
+            });
         },
-        removeItem: (state) => {
-            state.items.pop()
-        },
-        clearItems: (state) => {
-            state.items.length = 0;
+        deleteForm: (state, action) => {
+            const formName = action.payload;
+            state.items = state.items.filter(item => item.title !== formName);
         }
     }
 });
 
-export const { addItem, removeItem, clearItems } = formSlice.actions;
+export const { updateItems, deleteForm } = formSlice.actions;
 export default formSlice.reducer;

@@ -24,6 +24,16 @@
 
 .menu .menu-item {
   padding: 0px 30px;
+  cursor: pointer;
+}
+
+.menu .menu-item:hover {
+  font-weight: 500;
+}
+
+.menu-item > a {
+  text-decoration: none;
+  color: #000;
 }
 
 .main-container {
@@ -71,11 +81,17 @@
   background-color: aquamarine;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 60%;
   margin-top: 30px;
   padding: 30px;
   border-radius: 10px;
   font-weight: 500;
+}
+
+.action {
+  cursor: pointer;
+  padding: 5px;
 }
 
 /* FORM */

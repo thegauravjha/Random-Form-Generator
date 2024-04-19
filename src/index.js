@@ -8,6 +8,7 @@ import FormList from './Components/FormList';
 import Error from './Components/Error';
 import Navbar from './Components/Navbar';
 import Form from './Components/Form';
+import About from './Components/About';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -35,6 +36,10 @@ const indexRoute = createBrowserRouter([
             {
                 path: "/",
                 element: <FormList />
+            },
+            {
+                path: "/about",
+                element: <About />
             },
             {
                 path: "/form/:formName",
