@@ -8,9 +8,9 @@ import { deleteForm } from '../redux/Slices/formSlice';
 
 const FormList = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const [form] = Form.useForm(); // Initialize form instance
+    const [form] = Form.useForm();
     const items = useSelector((store) => (store.form.items));
-    const dispatch = useDispatch(); // Initialize dispatch function
+    const dispatch = useDispatch();
 
     const showModal = () => {
         setIsModalOpen(true);
@@ -22,7 +22,6 @@ const FormList = () => {
     };
 
     const handleDeleteForm = (formName) => {
-        // Dispatch the action to delete the form
         dispatch(deleteForm(formName));
     };
 
@@ -38,7 +37,7 @@ const FormList = () => {
                     destroyOnClose
                     footer={null}
                 >
-                    <FormBuilder form={form} setIsModalOpen={setIsModalOpen} /> {/* Pass form instance to FormBuilder */}
+                    <FormBuilder form={form} setIsModalOpen={setIsModalOpen} />
                 </Modal>
             </div>
             <div className="list-container">
@@ -50,7 +49,7 @@ const FormList = () => {
                         >
                             <div className="form-name">{item.title}</div>
                         </Link>
-                        <div className="action" onClick={() => handleDeleteForm(item.title)}>X</div> {/* Add onClick event */}
+                        <div className="action" onClick={() => handleDeleteForm(item.title)}>X</div>
                     </div>
                 ))}
             </div>

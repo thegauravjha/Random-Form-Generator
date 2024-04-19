@@ -62,7 +62,7 @@ const FormBuilder = ({ form, setIsModalOpen }) => {
                                                 remove(field.name);
                                                 setSelectedFields(prevFields => {
                                                     const newFields = [...prevFields];
-                                                    newFields.splice(index, 1); // Remove selected field type for removed field
+                                                    newFields.splice(index, 1);
                                                     return newFields;
                                                 });
                                             }}
@@ -83,7 +83,7 @@ const FormBuilder = ({ form, setIsModalOpen }) => {
                                             onChange={(value) => {
                                                 setSelectedFields(prevFields => {
                                                     const newFields = [...prevFields];
-                                                    newFields[index] = value; // Update selected field type for the current field
+                                                    newFields[index] = value;
                                                     return newFields;
                                                 });
                                             }}

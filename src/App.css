@@ -89,9 +89,17 @@
   font-weight: 500;
 }
 
+.form-name:hover {
+  font-weight: 600;
+}
+
 .action {
   cursor: pointer;
   padding: 5px;
+}
+
+.action:hover {
+  color: red;
 }
 
 /* FORM */
@@ -159,4 +167,21 @@ select {
 
 .form-builder-container {
   margin-top: 30px;
+}
+
+/* ABOUT */
+.about-container {
+  width: 1200px;
+  margin-top: 30px;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.about-heading {
+  margin-top: 40px;
+}
+.about-ul {
+  margin-left: 30px;
+}
+.about-ul > li {
+  margin-bottom: 14px;
 }

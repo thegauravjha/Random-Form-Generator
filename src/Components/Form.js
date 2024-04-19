@@ -28,7 +28,6 @@ const Form = () => {
         }));
     };
 
-    // console.log("formData", formData);
     return (
         <div className="form-main-container">
             {formData && (

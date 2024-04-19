@@ -1,5 +1,3 @@
-import { Input, Select } from "antd";
-
 export const FIELD_TYPES = [
     {
         label: 'input',
@@ -84,7 +82,7 @@ export const FIELD_MAPPING = {
         </div>
     ),
     upload: ({ label, rules = [], onChange }) => {
-        const fileSupport = rules?.[0]?.fileSupport || []; // Check if rules exist and if fileSupport is defined
+        const fileSupport = rules?.[0]?.fileSupport || [];
         return (
             <input type="file" name={label} required={rules.some(rule => rule.required)} onChange={onChange} accept={fileSupport.map(type => `.${type}`).join(',')} />
         );
